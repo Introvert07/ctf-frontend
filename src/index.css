@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body, button, input, a {
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="35" height="60" viewBox="0 0 16 24"><polygon fill="%23ffffff" points="0,0 6,12 3,12 10,24 12,22 5,12 8,12"/></svg>') 0 0, auto;
+}
+
+
+/* Width and height of scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 8px;
+}
+
+/* Track (background behind the thumb) */
+::-webkit-scrollbar-track {
+  background: #111;
+}
+
+/* Thumb (the draggable part) */
+::-webkit-scrollbar-thumb {
+  background: #00ff00; /* Neon green */
+  border-radius: 5px;
+  box-shadow: 0 0 10px #00ff00;
+}
+
+/* On hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #00cc00;
+}
+/* Scrollbar colors */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #00ff00 #111;
+}
