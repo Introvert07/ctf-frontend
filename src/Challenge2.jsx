@@ -99,7 +99,7 @@ const handleSubmit = async (e) => {
 
     try {
       const res = await axios.post(
-        "http://localhost:5000/api/flags/submit",
+        "https://vercel-backend-git-main-mahesh-kushwahs-projects.vercel.app/api/flags/submit",
         { flag },
         config
       );

@@ -40,7 +40,7 @@ export default function Navbar({ score: externalScore, setScore }) {
   const handleFinalSubmit = async () => {
     try {
       await axios.post(
-        `http://localhost:5000/api/auth/final-submit`,
+        `https://vercel-backend-git-main-mahesh-kushwahs-projects.vercel.app/api/auth/final-submit`,
         {
           submittedAt: new Date().toISOString(),
         },
