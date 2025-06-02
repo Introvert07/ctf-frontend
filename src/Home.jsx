@@ -199,6 +199,25 @@ export default function Home() {
   </button>
 </div>
 
+
+<div className="mt-6 z-10">
+  <button
+    onClick={() => {
+      const user = JSON.parse(localStorage.getItem("user"));
+      if (user) {
+        navigate("/games");
+      } else {
+        toast.error("Please login to play the game.");
+      }
+    }}
+    className="px-6 py-3 border-2 border-yellow-400 text-yellow-300 hover:bg-yellow-600/20 transition-all rounded shadow-md"
+  >
+    PLAY GAMES
+  </button>
+</div>
+
     </div>
+
+  
   );
 }

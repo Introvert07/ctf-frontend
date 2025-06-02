@@ -91,6 +91,7 @@ export default function PoweredByFlux() {
           </a>
         </p>
       </div>
+      
     </div>
   );
 }

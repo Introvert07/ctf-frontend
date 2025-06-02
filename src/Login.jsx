@@ -41,7 +41,7 @@ if (isFinished) {
 
 
     toast.success("Login successful!");
-    navigate("/challenge1");
+    navigate("/");
   } catch (error) {
     toast.error(
       error.response?.data?.message || "Invalid username or password"
