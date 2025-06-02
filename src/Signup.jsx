@@ -1,5 +1,7 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+
 import axios from "axios";
 import toast, { Toaster } from "react-hot-toast";
 import { BASE_URL } from "./config";
@@ -14,6 +16,8 @@ export default function Signup() {
   const validateEnrollment = (value) => /^[a-zA-Z0-9]{1,20}$/.test(value);
   const validatePassword = (value) =>
     /^(?=.*[a-zA-Z])(?=.*\d)[A-Za-z\d]{6,20}$/.test(value);
+
+  const navigate = useNavigate();
 
   const handleSignup = async (e) => {
     e.preventDefault();
@@ -43,10 +47,16 @@ export default function Signup() {
         password,
       });
       toast.success("Account created successfully!");
+      
       setEnrollment("");
       setUsername("");
       setEmail("");
       setPassword("");
+        
+      // Wait 2 seconds before navigating to login
+  setTimeout(() => {
+    navigate('/login');
+  }, 2000);
     } catch (error) {
       toast.error(
         error.response?.data?.message || "Signup failed. Try again."
@@ -55,7 +65,7 @@ export default function Signup() {
   };
 
   return (
-    <div className="min-h-52 bg-black flex items-center justify-center font-mono">
+    <div className="min-h-screen bg-black flex items-center justify-center font-mono">
       <Toaster position="top-right" reverseOrder={false} />
 
       <div className="border-4 border-pink-400 p-10 rounded-xl shadow-[0_0_20px_#ff00ff] bg-black text-pink-300 max-w-md w-full">

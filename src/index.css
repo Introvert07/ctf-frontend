@@ -3,9 +3,11 @@
 @tailwind utilities;
 
 
-body, button, input, a {
+
+
+/* body, button, input, a {
   cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="35" height="60" viewBox="0 0 16 24"><polygon fill="%23ffffff" points="0,0 6,12 3,12 10,24 12,22 5,12 8,12"/></svg>') 0 0, auto;
-}
+} */
 
 
 /* Width and height of scrollbar */
