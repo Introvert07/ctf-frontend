@@ -27,6 +27,31 @@ export default function Challenge1() {
     35
   );
 
+  // Base64 encoded flags
+  const encodedFlags = [
+    
+    "ZmxhZzMtdnVl"  // flag3-vue
+
+  ];
+
+  function decodeBase64(encoded) {
+    try {
+      return atob(encoded);
+    } catch {
+      return null;
+    }
+  }
+
+  useEffect(() => {
+    // Expose encoded flags and decode function to window for console use
+    window.encodedFlags = encodedFlags;
+    window.decodeBase64 = decodeBase64;
+    console.log(
+      "%cHint: Use decodeBase64(window.encodedFlags[index]) to decode flags in the console!",
+      "color: green; font-weight: bold; font-size: 16px"
+    );
+  }, []);
+
   // Initialize flags from localStorage or fallback to empty strings
   const [flags, setFlags] = useState(() => {
     const savedFlags = localStorage.getItem("challenge1Flags");
@@ -47,8 +72,6 @@ export default function Challenge1() {
     setLoading(true);
 
     const user = JSON.parse(localStorage.getItem("user"));
-    
-
 
     if (!user || !user.token) {
       toast.error("Please log in first!");
@@ -97,7 +120,8 @@ export default function Challenge1() {
         <div className="w-full md:w-1/2 flex justify-center">
           <img
             src={gif}
-            alt="Cyber attack illustration flag2(jQuery)"
+            alt="Cyber attack illustration f%l%a%g%2%(erqjuy
+            )"
             className="max-w-sm rounded-xl"
           />
         </div>
@@ -105,11 +129,9 @@ export default function Challenge1() {
         {/* Right: Auto-typed Text */}
         <div className="w-full md:w-1/2 text-center md:text-left">
           <h2 className="text-2xl font-bold mb-3">
-            Challenge 1 <span className="text-black">Flag1(Angular)</span>
+            Challenge 1 <span className="text-black">F.l.a.g.1.(gnraual)</span>
           </h2>
-          <p className="text-base leading-relaxed whitespace-pre-line">
-            {typedText}
-          </p>
+          <p className="text-base leading-relaxed whitespace-pre-line">{typedText}</p>
         </div>
       </div>
 
@@ -120,14 +142,13 @@ export default function Challenge1() {
             Submit Your Flags
           </h3>
 
-          <form className="flex flex-col gap-4" onSubmit={handleSubmit}> 
-            
+          <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
             {[1, 2, 3].map((num, index) => (
-              <div key={num}> 
+              <div key={num}>
                 <label className="block mb-1 text-xs">
-                  FLAG {num} <span className="text-black">flag3(vue)</span>
+                  FLAG {num} 
                 </label>
-                
+
                 <input
                   type="text"
                   value={flags[index]}
@@ -150,9 +171,7 @@ export default function Challenge1() {
             </button>
           </form>
         </div>
-        
       </div>
-      
 
       {/* Bottom-right Arrow to Challenge2 */}
       <Link
@@ -171,8 +190,16 @@ export default function Challenge1() {
       >
         <FaArrowLeft className="text-3xl" />
       </Link>
+
+
       
+      
+         <div className="max-w-full mx-auto mt-12 ml-20 text-green-300 font-mono text-sm px-4">
+  <h3 className="mb-2 font-bold  text-green-400">NOTE:- "If the flags appear jumbled, please arrange them correctly."
+
+</h3>
+  </div>
     </div>
-    
+ 
   );
 }

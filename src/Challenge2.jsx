@@ -56,12 +56,18 @@ export default function Challenge2() {
       {displayedText.split("🔥")[0]}
       <span
         className="cursor-pointer hover:text-red-300"
-        onClick={() => setClicks((prev) => prev + 1)}
+        onClick={() => setClicks((prev) => prev + 1)
+          
+        }
+        
         title="Click me multiple times..."
+       
       >
-        🔥
+        🔥;
+        
       </span>
-      {displayedText.split("🔥")[1]}
+      {displayedText.split("🔥")[1]
+      }
     </span>
   ) : (
     displayedText
@@ -157,9 +163,7 @@ const handleSubmit = async (e) => {
               <div key={num}>
                 <label className="block mb-1 text-xs">
                   FLAG {num}
-                  {num === 2 && (
-                    <span className="text-black"> Flag2(man in the middle)</span>
-                  )}
+                  
                 </label>
                 <input
                   type="text"
@@ -169,7 +173,7 @@ const handleSubmit = async (e) => {
                   placeholder={`Paste flag ${num}`}
                   onMouseEnter={
                     num === 2
-                      ? () => console.log("flag2(man-in-the-middle)")
+                      ? () => console.log("flag2(man in the middle)")
                       : undefined
                   }
                   autoComplete="off"
@@ -189,6 +193,7 @@ const handleSubmit = async (e) => {
           </form>
         </div>
       </div>
+      
 
       {/* Navigation Arrows */}
       <Link
@@ -202,10 +207,30 @@ const handleSubmit = async (e) => {
       <Link
         to="/challenge1"
         className="fixed bottom-6 left-6 z-50 bg-red-400 text-black rounded-full p-4 hover:bg-red-300 transition-all shadow-[0_0_15px_red]"
-        title="Back to Challenge 1 flag1(phishing)"
+        title="Back to Challenge 1 f$l$a$g$1(phishing)"
       >
         <FaArrowLeft className="text-3xl" />
       </Link>
+
+
+      {/* Hints Section */}
+<div className="max-w-full mx-auto mt-12 ml-20 text-red-300 font-mono text-sm px-4">
+  <h3 className="mb-2 font-bold text-red-400">Hints to Find Flags</h3>
+  <ul className="list-disc list-inside space-y-2">
+    <li>
+      <strong>Hint 1:</strong> <em>"Beneath the pointing where it all began, lies the first trap laid by deceitful hands."</em><br />
+          </li>
+    <li>
+      <strong>Hint 2:</strong> <em>"Hover where secrets are meant to be shared, and a silent whisper appears only for the aware."</em><br />
+        </li>
+    <li>
+      <strong>Hint 3:</strong> <em>"Summon the flame not once but five, and the final ember will come alive."</em><br />
+        </li>
+  </ul>
+</div>
+
     </div>
+
+    
   );
 }
