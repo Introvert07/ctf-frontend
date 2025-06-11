@@ -120,7 +120,7 @@ export default function Challenge1() {
         <div className="w-full md:w-1/2 flex justify-center">
           <img
             src={gif}
-            alt="Cyber attack illustration f%l%a%g%2%(erqjuy
+            alt="Cyber attack illustration f%l%a%g%2%(jquery
             )"
             className="max-w-sm rounded-xl"
           />
@@ -129,7 +129,7 @@ export default function Challenge1() {
         {/* Right: Auto-typed Text */}
         <div className="w-full md:w-1/2 text-center md:text-left">
           <h2 className="text-2xl font-bold mb-3">
-            Challenge 1 <span className="text-black">F.l.a.g.1.(gnraual)</span>
+            Challenge 1 <span className="text-black">F.l.a.g.1.(angular)</span>
           </h2>
           <p className="text-base leading-relaxed whitespace-pre-line">{typedText}</p>
         </div>
@@ -194,11 +194,7 @@ export default function Challenge1() {
 
       
       
-         <div className="max-w-full mx-auto mt-12 ml-20 text-green-300 font-mono text-sm px-4">
-  <h3 className="mb-2 font-bold  text-green-400">NOTE:- "If the flags appear jumbled, please arrange them correctly."
-
-</h3>
-  </div>
+      
     </div>
  
   );

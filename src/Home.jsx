@@ -151,68 +151,53 @@ export default function Home() {
           breach the system?
         </p>
       </div>
-
- <div ref={viewRef} className="mt-10 z-10 flex flex-wrap gap-4 justify-center">
+      <div ref={viewRef} className="mt-10 z-10 flex justify-center gap-6">
+  {/* Round 1 → Challenge Page */}
   <button
     onClick={() => {
       const user = JSON.parse(localStorage.getItem("user"));
       if (user) {
         navigate("/challenge1");
       } else {
-        toast.error("Please login to access Challenge 1.");
-        
+        toast.error("Please login to access Round 1.");
+        navigate("/login");
       }
     }}
-    className="px-6 py-3 border-2 border-green-400 text-green-300 hover:bg-green-600/20 transition-all rounded shadow-md"
+    className="px-6 py-3 bg-gradient-to-r from-green-400 to-green-600 text-white font-semibold rounded-xl shadow-md hover:from-green-500 hover:to-green-700 transition-transform transform hover:scale-105"
   >
-    CHALLENGE 1
+    Round-1
   </button>
 
-  <button
-    onClick={() => {
-      const user = JSON.parse(localStorage.getItem("user"));
-      if (user) {
-        navigate("/challenge2");
-      } else {
-        toast.error("Please login to access Challenge 2.");
-        
-      }
-    }}
-    className="px-6 py-3 border-2 border-red-400 text-red-300 hover:bg-red-600/20 transition-all rounded shadow-md"
-  >
-    CHALLENGE 2
-  </button>
-
-  <button
-    onClick={() => {
-      const user = JSON.parse(localStorage.getItem("user"));
-      if (user) {
-        navigate("/challenge3");
-      } else {
-        toast.error("Please login to access Challenge 3.");
-        
-      }
-    }}
-    className="px-6 py-3 border-2 border-green-400 text-green-300 hover:bg-green-600/20 transition-all rounded shadow-md"
-  >
-    CHALLENGE 3
-  </button>
-</div>
-
-
-<div className="mt-6 z-10">
+  {/* Round 2 → Games Page */}
   <button
     onClick={() => {
       const user = JSON.parse(localStorage.getItem("user"));
       if (user) {
         navigate("/games");
       } else {
-        toast.error("Please login to play the game.");
+        toast.error("Please login to access Round 2.");
+        navigate("/login");
       }
     }}
-    className="px-6 py-3 border-2 border-yellow-400 text-yellow-300 hover:bg-yellow-600/20 transition-all rounded shadow-md"
+    className=" px-6 py-3 bg-gradient-to-r from-blue-400 to-purple-600 text-white font-semibold rounded-xl shadow-md hover:from-purple-500 hover:to-pink-500 transition-transform transform hover:scale-105"
   >
-    PLAY GAMES
+    Round-2
+  </button>
+
+  {/* Round 3 → (Placeholder or another route) */}
+  <button
+    onClick={() => {
+      const user = JSON.parse(localStorage.getItem("user"));
+      if (user) {
+        navigate("/round3");
+      } else {
+        toast.error("Please login to access Round 3.");
+        navigate("/login");
+      }
+    }}
+    className="px-6 py-3 bg-gradient-to-r from-red-400 to-yellow-500 text-white font-semibold rounded-xl shadow-md hover:from-yellow-400 hover:to-red-600 transition-transform transform hover:scale-105"
+  >
+    Round-3
   </button>
 </div>
 
