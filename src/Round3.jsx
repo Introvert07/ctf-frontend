@@ -1,3 +1,5 @@
+
+
 import React, { useRef, useEffect, useState } from "react";
 import gsap from "gsap";
 import axios from "axios";
@@ -8,7 +10,7 @@ export default function Round3({ score, setScore }) {
   const titleRef = useRef();
   const descRef = useRef();
   const user = JSON.parse(localStorage.getItem("user"));
-  const [flags, setFlags] = useState({ flag1: "", flag2: "" });
+  const [flags, setFlags] = useState({ flag1: "", flag2: "" }); // ✅ start empty
 
   useEffect(() => {
     gsap.fromTo(
@@ -44,7 +46,10 @@ export default function Round3({ score, setScore }) {
       // ✅ clear input after success
       setFlags({ ...flags, [flagKey]: "" });
     } catch (err) {
-      toast.error(err.response?.data?.message || "Flag submission failed");
+      toast.error(
+        err.response?.data?.message ||
+          "Invalid flag. Enter it exactly as shown (case-sensitive)."
+      );
     }
   };
 
@@ -134,4 +139,3 @@ export default function Round3({ score, setScore }) {
     </div>
   );
 }
-////
