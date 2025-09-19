@@ -9,6 +9,7 @@ import Challenge3 from "./Challenge3";
 import Endgame from "./Endgame";
 import Navbar from "./Navbar";
 import Games from "./Games";
+import Round3 from "./Round3";
 
 function App() {
   const [score, setScore] = useState(null);
@@ -51,6 +52,8 @@ function App() {
         <Route path="/challenge3" element={<Challenge3 setScore={setScore} />} />
         <Route path="/endgame" element={<Endgame setScore={setScore} />} />
         <Route path="/games" element={<Games setScore={setScore} />} />
+          <Route path="/round3" element={<Round3 setScore={setScore} />} />
+
       </Routes>
       
     </Router>
