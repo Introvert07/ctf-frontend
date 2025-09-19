@@ -1,5 +1,3 @@
-
-
 import React, { useRef, useEffect, useState } from "react";
 import gsap from "gsap";
 import axios from "axios";
@@ -10,7 +8,7 @@ export default function Round3({ score, setScore }) {
   const titleRef = useRef();
   const descRef = useRef();
   const user = JSON.parse(localStorage.getItem("user"));
-  const [flags, setFlags] = useState({ flag1: "", flag2: "" }); // ✅ start empty
+  const [flags, setFlags] = useState({ flag1: "", flag2: "" }); // start empty
 
   useEffect(() => {
     gsap.fromTo(
@@ -33,7 +31,7 @@ export default function Round3({ score, setScore }) {
 
     try {
       const res = await axios.post(
-        `${BASE_URL}/flags/submit`,
+        "https://vercel-backend-git-main-mahesh-kushwahs-projects.vercel.app/api/flags/submit",
         { flag: flags[flagKey] },
         {
           headers: { Authorization: `Bearer ${user.token}` },
@@ -43,7 +41,7 @@ export default function Round3({ score, setScore }) {
       toast.success(res.data.message);
       if (res.data.score !== undefined) setScore(res.data.score);
 
-      // ✅ clear input after success
+      // Clear input after success
       setFlags({ ...flags, [flagKey]: "" });
     } catch (err) {
       toast.error(
@@ -73,7 +71,7 @@ export default function Round3({ score, setScore }) {
       >
         Play the special round games, crack the challenges, and submit both
         flags below. Each correct flag ={" "}
-        <span className="text-green-400 font-bold">20 points</span>.
+        <span className="text-green-400 font-bold">10 points</span>.
       </p>
 
       {/* Two Column Flag Inputs */}
