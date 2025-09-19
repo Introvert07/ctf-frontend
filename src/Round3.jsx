@@ -66,22 +66,10 @@ export default function Round3({ score, setScore }) {
         ref={descRef}
         className="text-sm md:text-base text-center max-w-3xl mx-auto text-green-300 mb-8"
       >
-        Download the special round games and crack the challenges! Submit both
+        Play the special round games, crack the challenges, and submit both
         flags below. Each correct flag ={" "}
         <span className="text-green-400 font-bold">20 points</span>.
       </p>
-
-      {/* Download Link */}
-      <div className="text-center mb-10">
-        <a
-          href="https://nikhilkush078.github.io/ctf_main_website-/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-block px-6 py-3 bg-green-700 hover:bg-green-500 text-black font-bold rounded shadow underline"
-        >
-          🔗 DOWNLOAD GAMES
-        </a>
-      </div>
 
       {/* Two Column Flag Inputs */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
@@ -89,7 +77,15 @@ export default function Round3({ score, setScore }) {
         <div className="border border-green-500 p-6 rounded-lg shadow-lg bg-gray-900/60">
           <h2 className="text-xl text-green-300 mb-1">Flag 1</h2>
           <p className="text-sm text-green-400 mb-3">
-            Game: <span className="font-bold">Flying Ship Game</span>
+            Game:{" "}
+            <a
+              href="https://drive.google.com/uc?export=download&id=1l4b_rCav_VDfXSJ9fB5AXSAKoygJMWaX"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline text-green-200 hover:text-green-400"
+            >
+              Flying Ship Game
+            </a>
           </p>
           <input
             type="text"
@@ -110,7 +106,15 @@ export default function Round3({ score, setScore }) {
         <div className="border border-green-500 p-6 rounded-lg shadow-lg bg-gray-900/60">
           <h2 className="text-xl text-green-300 mb-1">Flag 2</h2>
           <p className="text-sm text-green-400 mb-3">
-            Game: <span className="font-bold">Princess of the Prison</span>
+            Game:{" "}
+            <a
+              href="https://drive.google.com/uc?export=download&id=1Lqx87Qcrpez9pcv_PAWVTHtbuBwRdFq3"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline text-green-200 hover:text-green-400"
+            >
+              Princess of the Prison
+            </a>
           </p>
           <input
             type="text"
@@ -130,3 +134,4 @@ export default function Round3({ score, setScore }) {
     </div>
   );
 }
+////
